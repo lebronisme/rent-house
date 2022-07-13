@@ -1,0 +1,63 @@
+<script>
+    const obj = {
+      label: 'aaa',
+      children: [
+        {
+          label: 'aa',
+          children: [
+            {
+              label: 'a',
+            },
+            {
+              label: 'b',
+            },
+          ],
+        },
+        {
+          label: 'bb',
+          children: [
+            {
+              label: 'a',
+            },
+            {
+              label: 'b',
+            },
+          ],
+        },
+        {
+          label: 'cc',
+          children: [
+            {
+              label: 'a'
+
+            },
+            {
+              label: 'b',
+
+            },
+          ],
+        },
+      ],
+    }
+    console.log(obj)
+  const aaa={}
+  const bbb={}
+  function fn1(){
+    bbb[obj.label]=['aaa']
+  }
+  fn1()
+  console.log(bbb);
+    function fn(obj) {
+      let key=obj.label
+      return  aaa[key] = obj.children.map((val) => {
+        console.log(val)
+        if (val.children) {
+          return fn(val)
+        }else{
+          return {a:0}
+        }
+      })
+
+    }
+    console.log(fn(obj))
+</script>
