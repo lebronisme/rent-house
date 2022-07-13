@@ -1,6 +1,8 @@
 <template>
 <div class="main">
+  <!-- 保持缓存，不重新加载 -->
     <keep-alive>
+      <!-- 一级占位符 -->
       <router-view></router-view>
     </keep-alive>
 </div>

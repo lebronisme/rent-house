@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 路由懒加载
 const Home = () => import('@/views/Home')
 const Layout = () => import('@/views/Layout')
 const User = () => import('@/views/User')
@@ -12,10 +13,12 @@ const Map = () => import('@/views/Map')
 Vue.use(VueRouter)
 
 const routes = [
+  // 重定向
   {
     path: '/',
     component: Layout,
     redirect: '/home',
+    // 二级路由
     children: [
       { path: 'home', component: Home },
       { path: 'user', component: User },
