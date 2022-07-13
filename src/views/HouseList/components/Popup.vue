@@ -199,7 +199,7 @@ export default {
   }
 }
 .main {
-  padding: 0  0 0 15px ;
+  padding: 0 0 0 15px;
   position: relative;
   height: 100%;
   top: 0;

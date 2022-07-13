@@ -22,7 +22,7 @@
         />
       </template>
     </van-search>
-
+<!-- 首页轮播图 -->
     <van-swipe
       class="my-swipe"
       :autoplay="3000"
@@ -40,14 +40,14 @@
         <van-image
           width="375"
           height="212"
-          src="http://liufusong.top:8080/img/swiper/2.png"
+          src="http://liufusong.top:8080/img/swiper/3.png"
         />
       </van-swipe-item>
       <van-swipe-item>
         <van-image
           width="375"
           height="212"
-          src="http://liufusong.top:8080/img/swiper/3.png"
+          src="http://liufusong.top:8080/img/swiper/2.png"
         />
       </van-swipe-item>
     </van-swipe>

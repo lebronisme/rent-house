@@ -54,7 +54,6 @@ export default {
       this.$router.go(-1)
     },
     async onSubmit (values) {
-      // console.log(values)
       try {
         const res = await LoginAPI(values)
         console.log(res)
@@ -78,9 +77,6 @@ export default {
 </script>
 
 <style scoped lang='less'>
-// .van-form{
-// margin: 20px;
-// }
 .van-form {
   margin-top: 22px;
   .van-field {

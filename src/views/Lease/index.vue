@@ -25,7 +25,7 @@
       <van-field
         type="digit"
         v-model="allData.size"
-        label="建筑面积"
+        label="房屋面积"
         right-icon="warning-o"
         placeholder="请输入建筑面积"
       >
@@ -53,7 +53,7 @@
     <div class="button">房屋标题</div>
     <van-field
       v-model="allData.title"
-      placeholder="请输入标题（例如：整租 小区名 2室 5000元）"
+      placeholder="请输入标题（例如：整租 小区名 1室 1000元）"
     />
     <div class="button">房屋图像</div>
     <van-uploader v-model="fileList" multiple :after-read="afterRead" />
@@ -155,7 +155,7 @@ export default {
     clearFn () {
       Dialog.confirm({
         title: '提示',
-        message: '是否取消发布？如果确认将清除所有内容'
+        message: '确定取消发布吗？'
       })
         .then(() => {
           this.$router.back()
@@ -183,7 +183,6 @@ export default {
       }
     },
     async afterRead (file) {
-      // 此时可以自行将文件上传至服务器
       console.log(file)
       const formdata = new FormData()
       formdata.append('file', file.file)
@@ -195,11 +194,11 @@ export default {
       this.pigShow = false
     },
     onpig () {
-      const value = this.$refs.pig.getValues() // 9.通过ref标记的组件、用getValues<选择器自带方法>方法获取选中的数据 获取滚动数据值
+      const value = this.$refs.pig.getValues()
       console.log(value)
-      if (this.index === 1) { // 10. 判断时那一组数据
-        this.allData.roomType = value[0].value // 11.在暂存数据中存放对应的数据   滚动数据值的第一项的id   放到新增的.roomType里
-        this.text.roomType = value[0].text // 12. 滚动数据值的第一项的值放到.roomType1
+      if (this.index === 1) { // 通过索引判断具体是哪一组数据
+        this.allData.roomType = value[0].value
+        this.text.roomType = value[0].text
       } else if (this.index === 2) {
         this.allData.floor = value[0].value
         this.text.floor = value[0].text
